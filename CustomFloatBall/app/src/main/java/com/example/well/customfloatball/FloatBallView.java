@@ -183,7 +183,7 @@ public class FloatBallView extends LinearLayout {
     private void doUp() {
         switch (mCurrentMode) {
             case MODE_LEFT:
-                AccessibilityUtils.doPullLeft(mBallService,mImgBall,mImgBigBall);
+                AccessibilityUtils.doPullLeft(mBallService, mImgBall, mImgBigBall);
                 break;
             case MODE_RIGHT:
                 AccessibilityUtils.doPullRight(mBallService);
@@ -251,15 +251,15 @@ public class FloatBallView extends LinearLayout {
                 mImgBigBall.setY(mMImg_big_ballY + OFFSET);
 
                 //如果长时间下拉则,移除自己
-                postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (mCurrentMode == MODE_DOWN && mIsLongTouch) {
-                            toRemove();
-                            mCurrentMode = MODE_GONE;
-                        }
-                    }
-                }, REMOVE_LIMIT);
+//                postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        if (mCurrentMode == MODE_DOWN && mIsTouching) {
+//                            toRemove();
+//                            mCurrentMode = MODE_GONE;
+//                        }
+//                    }
+//                }, REMOVE_LIMIT);
 
             } else {//向上
                 if (mCurrentMode == MODE_UP) {
@@ -270,6 +270,8 @@ public class FloatBallView extends LinearLayout {
                 mImgBigBall.setY(mMImg_big_ballY - OFFSET);
             }
         }
+
+        Log.e(TAG, "x=" + mImgBigBall.getX() + " y=" + mImgBigBall.getY());
 
     }
 
@@ -308,6 +310,7 @@ public class FloatBallView extends LinearLayout {
 
     /**
      * 获取状态栏高度还是这种方式靠谱
+     *
      * @return
      */
     public int getStatusBarHeight() {
@@ -327,6 +330,7 @@ public class FloatBallView extends LinearLayout {
 
     /**
      * 不靠谱
+     *
      * @param view
      * @return
      */

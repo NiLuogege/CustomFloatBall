@@ -77,12 +77,12 @@ public class AccessibilityUtils {
      */
     public static void doPullLeft(FloatBallService service, ImageView smallIv,ImageView bigIv) {
         if(isWhite){
-            smallIv.setImageResource(R.drawable.icon_ball_red);
-            bigIv.setImageResource(R.drawable.icon_big_ball_red);
+            smallIv.setBackgroundResource(R.drawable.icon_ball_red);
+            bigIv.setBackgroundResource(R.drawable.icon_big_ball_red);
             isWhite=false;
         }else{
-            smallIv.setImageResource(R.drawable.icon_ball_white);
-            bigIv.setImageResource(R.drawable.icon_big_ball_white);
+            smallIv.setBackgroundResource(R.drawable.icon_ball_white);
+            bigIv.setBackgroundResource(R.drawable.icon_big_ball_white);
             isWhite=true;
         }
 
