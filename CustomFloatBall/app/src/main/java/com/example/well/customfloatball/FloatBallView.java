@@ -183,8 +183,10 @@ public class FloatBallView extends LinearLayout {
     private void doUp() {
         switch (mCurrentMode) {
             case MODE_LEFT:
+                AccessibilityUtils.doPullLeft(mBallService,mImgBall,mImgBigBall);
+                break;
             case MODE_RIGHT:
-                AccessibilityUtils.doLeftOrRight(mBallService);
+                AccessibilityUtils.doPullRight(mBallService);
                 break;
             case MODE_UP:
                 AccessibilityUtils.doPullUp(mBallService);

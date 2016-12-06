@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.ImageView;
 
 /**
  * Created by Well on 2016/12/5.
@@ -11,6 +12,7 @@ import android.util.Log;
 
 public class AccessibilityUtils {
     public static final String TAG = "tag";
+    private static boolean isWhite=true;
 
     public static boolean isAccessibilitySettingsOn(Context context) {
         int accessibilityEnable = 0;
@@ -45,7 +47,7 @@ public class AccessibilityUtils {
      *
      * @param
      */
-    public static void doLeftOrRight(FloatBallService ballService) {
+    public static void doPullRight(FloatBallService ballService) {
         ballService.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
     }
 
@@ -65,5 +67,25 @@ public class AccessibilityUtils {
      */
     public static void doPullDown(FloatBallService ballService) {
         ballService.performGlobalAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS);
+    }
+
+    /**
+     * 左右滑动打开多任务
+     *  @param
+     * @param service
+     * @param smallIv
+     */
+    public static void doPullLeft(FloatBallService service, ImageView smallIv,ImageView bigIv) {
+        if(isWhite){
+            smallIv.setImageResource(R.drawable.icon_ball_red);
+            bigIv.setImageResource(R.drawable.icon_big_ball_red);
+            isWhite=false;
+        }else{
+            smallIv.setImageResource(R.drawable.icon_ball_white);
+            bigIv.setImageResource(R.drawable.icon_big_ball_white);
+            isWhite=true;
+        }
+
+
     }
 }

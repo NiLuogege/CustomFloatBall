@@ -19,15 +19,14 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="center"
-        android:alpha="0.5"
-        android:background="@drawable/icon_ball"/>
+        android:src="@drawable/icon_ball_white"/>
 
     <ImageView
         android:id="@+id/img_big_ball"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="center"
-        android:background="@drawable/icon_big_ball"
+        android:src="@drawable/icon_big_ball_white"
         android:visibility="invisible"
         />
 
